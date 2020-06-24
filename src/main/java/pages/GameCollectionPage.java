@@ -6,14 +6,17 @@ package pages;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Random;
 
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
+import api.restapi.SendRequest;
 import base.Setup;
 import common.GenUtil;
 
@@ -36,6 +39,20 @@ public class GameCollectionPage extends Setup {
 		
 		getNumberOfGames();
 		goToRandomGame();
+	}
+	
+	public void verifyResponse() {
+		
+		SendRequest request = new SendRequest();
+		try {
+			request.getResponse(URI);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (URISyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	private String goToRandomGame() {

@@ -16,11 +16,11 @@ git clone https://github.com/nitint007/boardgamegeek
 
 cd boardgamegeek
 
-mvn clean test
+mvn clean test -Dsurefire.suiteXmlFiles=testng.xml;
 
 # If fails to execute from cmd line -
 
-Go to '' and run '' as JUnit test
+Go to '/boardgamegeek/testng.xml' and run 'textng.xml' as TestNG Suite
 
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 

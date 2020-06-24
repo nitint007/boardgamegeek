@@ -68,6 +68,9 @@ public class UATSteps extends Setup {
 	public void check_the_API_information_about_the_game() throws Throwable {
 
 		System.out.println("In Then");
+		
+		gamecollection = new GameCollectionPage();
+		gamecollection.verifyResponse();
 	}
 
 	@Test(priority = 4, groups = "UAT")
