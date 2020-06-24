@@ -25,8 +25,12 @@ public class GameDetailsPage extends Setup {
 	
 	public void getGameLanguageDependenceVotes() {
 		
-		String level = gameLanguageDependence().getText();
-		System.out.println("Game Language Dependence Level is :"+level);
+		if (gameLanguageDependence().isDisplayed()) {
+			
+			String level = gameLanguageDependence().getText();
+			System.out.println("Game Language Dependence Level is :"+level);
+		}
+		
 		Assert.assertTrue(false, gameLanguageDependence().getText());
 	}
 

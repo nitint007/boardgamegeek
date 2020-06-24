@@ -5,7 +5,6 @@ package pages;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Random;
@@ -18,7 +17,6 @@ import org.testng.Assert;
 
 import api.restapi.SendRequest;
 import base.Setup;
-import common.GenUtil;
 
 /**
  * @author nitinthite
@@ -63,25 +61,17 @@ public class GameCollectionPage extends Setup {
 		System.out.println("Random row : " +x);
 		
 		if (x == 1) {
-			x = rand.nextInt(getNumberOfGames());
+			x = x+1;
 			System.out.println("Updated Random row : " +x);
 			
-			//driver.switchTo().alert().dismiss();
 			URI = baseURL+desiredGameURL(x).getText();
 			System.out.println("URI : " +URI);
-			
-//			driver.navigate().to(URI);
-//			System.out.println("Navigating to URL : " +URI);
 
 			desiredGame(x).click();
 		}
 		else {
-			//driver.switchTo().alert().dismiss();
 			URI = baseURL+desiredGameURL(x).getText();
 			System.out.println("URI : " +URI);
-			
-//			driver.navigate().to(URI);
-//			System.out.println("Navigating to URL : " +URI);
 
 			desiredGame(x).click();
 		}
@@ -95,9 +85,6 @@ public class GameCollectionPage extends Setup {
 		List  rows = driver.findElements(By.xpath("//table[@id='collectionitems']//tr"));
         System.out.println("No of rows are : " +rows.size());
 		return rows.size(); 
-        
-//        List  rows = driver.findElements(By.xpath(".//*[@id='leftcontainer']/table/tbody/tr/td[1]")); 
-//        System.out.println("No of rows are : " + rows.size());
 	}
 	
 	private void assertGameCollectionPage() {
@@ -123,7 +110,7 @@ public class GameCollectionPage extends Setup {
 		private WebElement desiredGame(int gameNumber) {
 
 			return wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(
-					"//*[@id='collectionitems']//tbody/tr["+gameNumber+"]"))));
+					"//*[@id='collectionitems']//tbody/tr["+gameNumber+"]/td[1]/div[2]/a"))));
 		}
 		
 		private WebElement desiredGameURL(int gameNumber) {
