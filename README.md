@@ -2,6 +2,8 @@
 
 An Assignment project to automate web and rest assured steps
 
+# NOTE: IF WANT TO execute on Windows + chrome - Please uncomment chrome driver related setup
+
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
 # Framework
@@ -23,5 +25,3 @@ mvn clean test -Dsurefire.suiteXmlFiles=testng.xml;
 Go to '/boardgamegeek/testng.xml' and run 'textng.xml' as TestNG Suite
 
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
-
-

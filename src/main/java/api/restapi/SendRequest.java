@@ -1,3 +1,6 @@
+/*
+ * Package for reusable classes for REST Assured automation
+ */
 package api.restapi;
 
 import java.net.URISyntaxException;

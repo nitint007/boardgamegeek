@@ -53,21 +53,21 @@ public class Setup {
 			System.out.println("Setup method call");
 
 			// please uncomment the line below if you are running the suite on Windows OS
-			// System.setProperty("Webdriver.chrome.driver", "./src/test/resources/drivers/chromedriver.exe");
+			// System.setProperty("Webdriver.chrome.driver","./src/test/resources/drivers/chromedriver.exe");
 
 			// Initialising chrome driver
 			driver = new ChromeDriver();
-//			driver = new FirefoxDriver();
+//			 driver = new FirefoxDriver();
 		}
 
 		// To open the URL in browser window
 		driver.get(properties.getProperty("url"));
 
-		// Describing default wait time for each element in tests
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-
 		// To maximise the browser
 		driver.manage().window().maximize();
+
+		// Describing default wait time for each element in tests
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
 		// Deleting all cookies
 		driver.manage().deleteAllCookies();

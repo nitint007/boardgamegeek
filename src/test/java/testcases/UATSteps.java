@@ -37,7 +37,7 @@ public class UATSteps extends Setup {
 	
 	@BeforeGroups("UAT")
 	public void beforeGroupAllSteps() throws FileNotFoundException, IOException {
-		System.out.println("Inside Hooks @Before");
+		System.out.println("Inside @Before groups");
 		WebSetUp();
 		
 		landingpage = new LandingPage();
@@ -47,7 +47,7 @@ public class UATSteps extends Setup {
 	//################# Test steps ###################
 
 	@Test(priority = 1, groups = "UAT")
-	public void open_the_game_collection_of_a_user() throws Throwable {
+	public void openGameCollection() throws Throwable {
 
 		System.out.println("In Given");
 		
@@ -56,7 +56,7 @@ public class UATSteps extends Setup {
 	}
 	
 	@Test(priority = 2, groups = "UAT")
-	public void go_to_the_page_of_one_of_the_games() throws Throwable {
+	public void gotToGamePage() throws Throwable {
 
 		System.out.println("In When");
 		
@@ -65,7 +65,7 @@ public class UATSteps extends Setup {
 	}
 	
 	@Test(priority = 3, groups = "UAT")
-	public void check_the_API_information_about_the_game() throws Throwable {
+	public void VerifyGameAPI() throws Throwable {
 
 		System.out.println("In Then");
 		
@@ -74,7 +74,7 @@ public class UATSteps extends Setup {
 	}
 
 	@Test(priority = 4, groups = "UAT")
-	public void verify_that_the_most_voted_Language_Dependence_level() throws Throwable {
+	public void verifyLanguageDependencelevel() throws Throwable {
 
 		gamedetails = new GameDetailsPage();
 		gamedetails.getGameLanguageDependenceVotes();

@@ -26,7 +26,7 @@ import common.GenUtil;
  */
 public class GameCollectionPage extends Setup {
 	
-	String URI;
+	String URI, baseURL = properties.getProperty("url");
 	
 	public GameCollectionPage() throws FileNotFoundException, IOException {
 		super();
@@ -41,11 +41,12 @@ public class GameCollectionPage extends Setup {
 		goToRandomGame();
 	}
 	
+	// Utilised REST Assured framework to verify API response
 	public void verifyResponse() {
 		
 		SendRequest request = new SendRequest();
 		try {
-			request.getResponse(URI);
+			System.out.println("API response :" +request.getResponse(URI));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -66,16 +67,22 @@ public class GameCollectionPage extends Setup {
 			System.out.println("Updated Random row : " +x);
 			
 			//driver.switchTo().alert().dismiss();
-			URI = desiredGameURL(x).getText();
+			URI = baseURL+desiredGameURL(x).getText();
 			System.out.println("URI : " +URI);
 			
+//			driver.navigate().to(URI);
+//			System.out.println("Navigating to URL : " +URI);
+
 			desiredGame(x).click();
 		}
 		else {
 			//driver.switchTo().alert().dismiss();
-			URI = desiredGameURL(x).getText();
+			URI = baseURL+desiredGameURL(x).getText();
 			System.out.println("URI : " +URI);
 			
+//			driver.navigate().to(URI);
+//			System.out.println("Navigating to URL : " +URI);
+
 			desiredGame(x).click();
 		}
 		
