@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
@@ -43,34 +44,38 @@ public class Setup {
 	}
 
 	/*
-	 * Method details out configuration for chrome browser
+	 * Method details for configuration for chrome browser
 	 */
 	public WebDriver WebSetUp() {
-		
-		if (driver == null ) {
-			
+
+		if (driver == null) {
+
 			System.out.println("Setup method call");
-				
-				// Initialising chrome driver
-				driver = new ChromeDriver();
+
+			// please uncomment the line below if you are running the suite on Windows OS
+			// System.setProperty("Webdriver.chrome.driver", "./src/test/resources/drivers/chromedriver.exe");
+
+			// Initialising chrome driver
+			driver = new ChromeDriver();
+//			driver = new FirefoxDriver();
 		}
-			
-			// To maximise the browser
-			driver.manage().window().maximize();
-			
-			// Deleting all cookies
-			driver.manage().deleteAllCookies();
-			
-			// Maximum time for wait for page to load to timeout
-			driver.manage().timeouts().pageLoadTimeout(65, TimeUnit.SECONDS);
-			
-			// Describing default wait time for each element in tests
-			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-			
-			// To open the URL in browser window
-			driver.get(properties.getProperty("url"));
-			
+
+		// To open the URL in browser window
+		driver.get(properties.getProperty("url"));
+
+		// Describing default wait time for each element in tests
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+
+		// To maximise the browser
+		driver.manage().window().maximize();
+
+		// Deleting all cookies
+		driver.manage().deleteAllCookies();
+
+		// Initialising Explicite wait object
+		wait = new WebDriverWait(driver, 30);
+
 		return driver;
-}
+	}
 
 }
