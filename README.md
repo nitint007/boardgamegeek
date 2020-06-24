@@ -6,7 +6,7 @@ An Assignment project to automate web and rest assured steps
 
 # Framework
 
-Selenium Webdriver, Java, Maven, Cucumber (BDD), Rest Assured
+Selenium Webdriver, Java, Maven, TestNG, Rest Assured
 
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
