@@ -44,7 +44,7 @@ public class GameCollectionPage extends Setup {
 		
 		SendRequest request = new SendRequest();
 		try {
-			System.out.println("API response :" +request.getResponse(URI));
+			System.out.println("API response :" +request.getResponse(driver.getCurrentUrl()));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

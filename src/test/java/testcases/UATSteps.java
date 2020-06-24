@@ -67,8 +67,13 @@ public class UATSteps extends Setup {
 
 		System.out.println("In Then");
 		
+//		gamedetails = new GameDetailsPage();
+//		gamedetails.lookForPoll();
+		
 		gamecollection = new GameCollectionPage();
 		gamecollection.verifyResponse();
+		
+//		gamedetails.closePollPanel();
 	}
 
 	@Test(priority = 4, groups = "UAT")
