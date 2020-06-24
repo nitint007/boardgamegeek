@@ -116,7 +116,7 @@ public class GameCollectionPage extends Setup {
 		private WebElement desiredGameURL(int gameNumber) {
 
 			return wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(
-					"//*[@id='collectionitems']//tbody/tr["+gameNumber+"]/td/div/a"))));
+					"//*[@id='collectionitems']//tbody/tr["+gameNumber+"]/td[1]/div[2]/a"))));
 		}
 
 }

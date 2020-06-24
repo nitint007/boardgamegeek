@@ -31,7 +31,7 @@ public class GameDetailsPage extends Setup {
 			System.out.println("Game Language Dependence Level is :"+level);
 		}
 		
-		Assert.assertTrue(false, gameLanguageDependence().getText());
+//		Assert.assertTrue(false, gameLanguageDependence().getText());
 	}
 
 	// **************** WebElements from User Collection page to be used in the

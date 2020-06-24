@@ -9,8 +9,6 @@ import java.io.IOException;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeGroups;
-import org.testng.annotations.Test;
-
 import base.Setup;
 import pages.GameCollectionPage;
 import pages.GameDetailsPage;
