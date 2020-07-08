@@ -12,7 +12,7 @@ Selenium Webdriver, Java, Maven, TestNG, Rest Assured
 
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
 
-# Steps to clone execute the tests:
+# Steps to clone and execute the tests:
 
 git clone https://github.com/nitint007/boardgamegeek
 

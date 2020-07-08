@@ -44,7 +44,7 @@ public class GameCollectionPage extends Setup {
 		
 		SendRequest request = new SendRequest();
 		try {
-			System.out.println("API response :" +request.getResponse(URI));
+			System.out.println("API response :" +request.getResponse(driver.getCurrentUrl()));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -116,7 +116,7 @@ public class GameCollectionPage extends Setup {
 		private WebElement desiredGameURL(int gameNumber) {
 
 			return wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath(
-					"//*[@id='collectionitems']//tbody/tr["+gameNumber+"]/td/div/a"))));
+					"//*[@id='collectionitems']//tbody/tr["+gameNumber+"]/td[1]/div[2]/a"))));
 		}
 
 }

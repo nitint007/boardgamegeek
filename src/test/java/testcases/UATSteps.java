@@ -9,8 +9,6 @@ import java.io.IOException;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeGroups;
-import org.testng.annotations.Test;
-
 import base.Setup;
 import pages.GameCollectionPage;
 import pages.GameDetailsPage;
@@ -69,8 +67,13 @@ public class UATSteps extends Setup {
 
 		System.out.println("In Then");
 		
+//		gamedetails = new GameDetailsPage();
+//		gamedetails.lookForPoll();
+		
 		gamecollection = new GameCollectionPage();
 		gamecollection.verifyResponse();
+		
+//		gamedetails.closePollPanel();
 	}
 
 	@Test(priority = 4, groups = "UAT")

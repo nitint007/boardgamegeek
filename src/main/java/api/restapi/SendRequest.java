@@ -33,7 +33,7 @@ public class SendRequest {
 			httpRequest = RestAssured.given();
 
 			// Storing response received in response object
-			response = httpRequest.request().get();
+			response = httpRequest.request().get("geekitem_polldata");
 			
 			actualStatusCode = response.getStatusCode();
 			

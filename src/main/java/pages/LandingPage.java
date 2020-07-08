@@ -66,6 +66,6 @@ public class LandingPage extends Setup {
 	private WebElement passwordField() {
 
 		return wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("inputPassword"))));
-	}// ul/li[8]/button/span[3]
+	}
 
 }
